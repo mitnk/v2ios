@@ -13,6 +13,7 @@
 @end
 
 @implementation HelloWorldViewController
+@synthesize label;
 @synthesize textField;
 
 - (void)viewDidLoad
@@ -24,6 +25,7 @@
 - (void)viewDidUnload
 {
     [self setTextField:nil];
+    [self setLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

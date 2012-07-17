@@ -20,6 +20,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="ef0-J9-Bg1"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sf6-ve-Nyh">
                                 <rect key="frame" x="124" y="360" width="72" height="37"/>
@@ -47,10 +50,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="label" destination="EZl-Zz-UND" id="kNo-KU-0qa"/>
                         <outlet property="textField" destination="rx8-Hf-ki0" id="g5i-bv-KCp"/>
                     </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="-187" y="87"/>
         </scene>
     </scenes>
     <classes>
@@ -58,6 +63,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HelloWorldViewController.h"/>
             <relationships>
                 <relationship kind="action" name="changeGreeting:"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
             </relationships>
         </class>
