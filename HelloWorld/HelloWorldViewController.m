@@ -13,6 +13,7 @@
 @end
 
 @implementation HelloWorldViewController
+@synthesize textField;
 
 - (void)viewDidLoad
 {
@@ -22,6 +23,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -31,4 +33,6 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)changeGreeting:(id)sender {
+}
 @end
