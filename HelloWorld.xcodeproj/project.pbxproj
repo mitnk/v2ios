@@ -15,6 +15,9 @@
 		6794F1E215B54E1D00A86969 /* HelloWorldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794F1E115B54E1D00A86969 /* HelloWorldAppDelegate.m */; };
 		6794F1E515B54E1D00A86969 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6794F1E315B54E1D00A86969 /* MainStoryboard.storyboard */; };
 		6794F1E815B54E1D00A86969 /* HelloWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794F1E715B54E1D00A86969 /* HelloWorldViewController.m */; };
+		6794F1EF15B6790A00A86969 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6794F1EE15B6790A00A86969 /* CFNetwork.framework */; };
+		6794F1F115B6791A00A86969 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6794F1F015B6791A00A86969 /* SystemConfiguration.framework */; };
+		6794F1F315B6794400A86969 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6794F1F215B6794400A86969 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		6794F1E415B54E1D00A86969 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6794F1E615B54E1D00A86969 /* HelloWorldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldViewController.h; sourceTree = "<group>"; };
 		6794F1E715B54E1D00A86969 /* HelloWorldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldViewController.m; sourceTree = "<group>"; };
+		6794F1EE15B6790A00A86969 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6794F1F015B6791A00A86969 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6794F1F215B6794400A86969 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6794F1F315B6794400A86969 /* MobileCoreServices.framework in Frameworks */,
+				6794F1F115B6791A00A86969 /* SystemConfiguration.framework in Frameworks */,
+				6794F1EF15B6790A00A86969 /* CFNetwork.framework in Frameworks */,
 				6794F1D215B54E1D00A86969 /* UIKit.framework in Frameworks */,
 				6794F1D415B54E1D00A86969 /* Foundation.framework in Frameworks */,
 				6794F1D615B54E1D00A86969 /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +59,9 @@
 		6794F1C215B54E1D00A86969 = {
 			isa = PBXGroup;
 			children = (
+				6794F1F215B6794400A86969 /* MobileCoreServices.framework */,
+				6794F1F015B6791A00A86969 /* SystemConfiguration.framework */,
+				6794F1EE15B6790A00A86969 /* CFNetwork.framework */,
 				6794F1D715B54E1D00A86969 /* HelloWorld */,
 				6794F1D015B54E1D00A86969 /* Frameworks */,
 				6794F1CE15B54E1D00A86969 /* Products */,
