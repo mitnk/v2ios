@@ -298,8 +298,6 @@
 
 - (void)authorize:(WBAuthorize *)authorize didSucceedWithAccessToken:(NSString *)theAccessToken userID:(NSString *)theUserID expiresIn:(NSInteger)seconds
 {
-    NSLog(@"\nAccess Info: %@ | %@ | %d\n", accessToken, userID, seconds);
-
     self.accessToken = theAccessToken;
     self.userID = theUserID;
     self.expireTime = [[NSDate date] timeIntervalSince1970] + seconds;

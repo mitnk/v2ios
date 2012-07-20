@@ -13,7 +13,12 @@
 
 @property (nonatomic, retain) WBEngine *weiBoEngine;
 
-- (void)setAccessToken:(NSString *)accessToken userID:(NSString *)userID expireTime:(double) expireTime viewcontroller:(id)vc;
+- (void)setAccessToken:(NSString *)accessToken userID:(NSString *)userID;
 - (BOOL)tweet:(NSString *)text image:(UIImage *)image;
-- (void)login;
+
+// Login with Sina Weibo Oauth
+- (void)OauthLogin;
+
+// Get Access Info from Ocean server, then it will set Access token info.
+- (BOOL)getAccessInfoFromServer;
 @end

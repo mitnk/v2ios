@@ -10,19 +10,15 @@
 #import "WBEngine.h"
 #import "WBSendView.h"
 #import "WBLogInAlertView.h"
+#import "YippeeWeibo.h"
 
-@interface HelloWorldViewController : UIViewController <UITextFieldDelegate, WBEngineDelegate, UIAlertViewDelegate, WBLogInAlertViewDelegate, WBSendViewDelegate>
-{
-    WBEngine *weiBoEngine;
-    UIActivityIndicatorView *indicatorView;
-}
+@interface HelloWorldViewController : UIViewController <UITextFieldDelegate>
 
+@property (nonatomic, retain) YippeeWeibo *weibo;
 @property (assign, nonatomic) IBOutlet UILabel *label;
 @property (assign, nonatomic) IBOutlet UITextField *textField;
 @property (copy, nonatomic) NSString *userName;
-@property (nonatomic, retain) WBEngine *weiBoEngine;
 
 - (IBAction)changeGreeting:(id)sender;
 - (IBAction)getToken:(id)sender;
-- (id)initWithAppKey:(NSString *)theAppKey appSecret:(NSString *)theAppSecret;
 @end

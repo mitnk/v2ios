@@ -8,8 +8,8 @@
 
 #import "YippeeWeibo.h"
 
-#define kWBSDKDemoAppKey @"1025844814"
-#define kWBSDKDemoAppSecret @"aefa217eb23928b06ca163ba9b8b12be"
+// #define kWBSDKDemoAppKey @""
+// #define kWBSDKDemoAppSecret @""
 
 #ifndef kWBSDKDemoAppKey
 #error
@@ -40,22 +40,33 @@
     return self;
 }
 
-- (void)setAccessToken:(NSString *)accessToken userID:(NSString *)userID expireTime:(double) expireTime viewcontroller:(id)vc
+- (void) dealloc
+{
+    [self.weiBoEngine setDelegate:nil];
+    [super dealloc];
+}
+
+- (void)setAccessToken:(NSString *)accessToken userID:(NSString *)userID
 {
     [self.weiBoEngine setAccessToken:accessToken];
     [self.weiBoEngine setUserID:userID];
+    NSTimeInterval expireTime = [[NSDate date] timeIntervalSince1970] + 31536000; // Add 365 days
     [self.weiBoEngine setExpireTime:expireTime];
 }
 
-- (BOOL) tweet:(NSString *) text image:(UIImage *)image
+- (BOOL) tweet:(NSString *)text image:(UIImage *)image
 {
-    // [self.weiBoEngine logIn];
-    
-    [self.weiBoEngine sendWeiBoWithText:text image:nil];
+    if ([self.weiBoEngine isLoggedIn])
+    {
+        [self.weiBoEngine sendWeiBoWithText:text image:image];
+    }
+    else {
+        [self.weiBoEngine logIn];
+    }
     return  YES;
 }
 
-- (void)login
+- (void)OauthLogin
 {
     [self.weiBoEngine logIn];
 }
@@ -64,8 +75,25 @@
 {
     NSString *accessToken = engine.accessToken;
     NSString *userID = engine.userID;
-    NSInteger expireTime = engine.expireTime;
-    NSLog(@"\ndidlogin: %@ %@ %d\n", accessToken, userID, expireTime);
+    NSTimeInterval expireTime = [[NSDate date] timeIntervalSince1970] + 31536000; // Add 365 days
+    NSLog(@"\nLogin Ok. accessToken: %@ userID: %@ %f\n", accessToken, userID, expireTime);
+}
+
+- (BOOL)getAccessInfoFromServer
+{
+    // ASIRequest from ocean server
+    // Then [self setAccessToken:<#(NSString *)#> userID:<#(NSString *)#> expireTime:<#(double)#> viewcontroller:<#(id)#>
+    return YES;
+}
+
+- (void)engine:(WBEngine *)engine requestDidSucceedWithResult:(id)result
+{
+    NSLog(@"You Said: %@\n", [result objectForKey:@"text"]);
+}
+
+- (void)engine:(WBEngine *)engine requestDidFailWithError:(NSError *)error
+{
+    NSLog(@"%@", [error localizedDescription]);
 }
 
 @end
