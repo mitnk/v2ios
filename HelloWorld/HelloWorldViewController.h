@@ -7,11 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBEngine.h"
+#import "WBSendView.h"
+#import "WBLogInAlertView.h"
 
-@interface HelloWorldViewController : UIViewController <UITextFieldDelegate>
+@interface HelloWorldViewController : UIViewController <UITextFieldDelegate, WBEngineDelegate, UIAlertViewDelegate, WBLogInAlertViewDelegate, WBSendViewDelegate>
+{
+    WBEngine *weiBoEngine;
+    UIActivityIndicatorView *indicatorView;
+}
 
 @property (assign, nonatomic) IBOutlet UILabel *label;
 @property (assign, nonatomic) IBOutlet UITextField *textField;
 @property (copy, nonatomic) NSString *userName;
+@property (nonatomic, retain) WBEngine *weiBoEngine;
+
 - (IBAction)changeGreeting:(id)sender;
+- (IBAction)getToken:(id)sender;
+- (id)initWithAppKey:(NSString *)theAppKey appSecret:(NSString *)theAppSecret;
 @end
